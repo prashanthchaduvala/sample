@@ -1,0 +1,26 @@
+
+{% include 'head.html' %}
+
+<html>
+<body>
+<table align="center" bgcolor="#f0f8ff" border="4">
+{% if data %}
+<tr><td>ID</td>
+<td>NAEME</td>
+<td>CONTACT</td>
+<td>Delete</td></tr>
+    {% for i in data %}
+        <tr><td>{{ i.id }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.contact }}</td>
+            <td>
+                <form action="/deleteid/">
+                <button type="submit" name="id" value="{{ i.id }}">delete</button>
+                    </form>
+            </td>
+          {% comment %}  <td><a href="{% url "delete" %}"{{ i.delete }} ></a></td>{% endcomment %}</tr>
+{{ message }}
+{% endfor %}</table>
+{% endif %}
+</body>
+</html>

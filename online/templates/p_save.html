@@ -1,0 +1,30 @@
+
+{% include 'head.html' %}
+
+<html>
+<body>
+<table align="center" bgcolor="#f0f8ff" border="4">
+{% if data %}
+<tr><td>P_ID</td>
+<td>P_NAEME</td>
+<td>P_PRICE</td>
+<td>P_QTY</td></tr>
+    <td>P_Delete</td></tr>
+
+    {% for i in data %}
+        <tr><td>{{ i.p_no }}</td>
+        <td>{{ i.p_name }}</td>
+        <td>{{ i.p_price }}</td>
+            <td>{{ i.p_qty }}</td>
+
+            <td>
+                <form action="/deleteid/">
+                <button type="submit" name="id" value="{{ i.id }}">delete</button>
+                    </form>
+            </td>
+          {% comment %}  <td><a href="{% url "delete" %}"{{ i.delete }} ></a></td>{% endcomment %}</tr>
+{{ message }}
+{% endfor %}</table>
+{% endif %}
+</body>
+</html>

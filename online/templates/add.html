@@ -1,0 +1,19 @@
+<html>
+<body>
+{% include 'head.html' %}
+<form action="/save/" method="post">
+    {% csrf_token %}
+<table align="center" bgcolor="silver">
+    <tr><td>Add Merchants</td></tr>
+    <tr><td><input type="number" placeholder="Id" required name="id" value="{{ id }}" readonly> </td></tr>
+    <tr><td><input type="text" placeholder="name" required name="name"> </td></tr>
+    <tr><td><input type="tel" placeholder="phone no" required name="contact"> </td></tr>
+    <tr><td><input type="email" placeholder="email" required name="email"> </td></tr>
+    <tr><td><input type="password" placeholder="password" required name="pass" value="{{ pas }}" readonly> </td></tr>
+    <tr><td><button type="submit">Save</button> </td></tr>
+
+
+</table>
+    </form>
+</body>
+</html>
